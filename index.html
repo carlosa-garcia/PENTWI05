@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="us">
+    <head>
+        <meta charset="utf-8">
+        <title>Defensive Coding Fundamentals for JavaScript and HTML5</title>
+        <link rel="stylesheet" href="CSS/main.css">
+    </head>
+
+    <body>
+
+        <nav id="top-menu" class="menu">
+            <ul class="top-menu-ul">
+                <li>Defensive Coding Fundamentals for JavaScript and HTML5</li>
+            </ul>
+        </nav>
+
+        <section class="body-wrapper">
+            <h1 class="form-header">Nuevo Invitado</h1>
+            <section class="bio-form">
+                <form id="guest-form" method="POST" action="#">
+                    <label for="guest-first-name">Nombre: </label>
+                    <input id="guest-first-name" name="guest-first-name" type="text" class="guest-name">
+                    <br>
+                    <label for="guest-last-name">Apellido: </label>
+                    <input id="guest-last-name" name="guest-last-name" type="text" class="guest-name">
+                    <br>
+                    <label for="guest-age">Edad: </label>
+                    <input id="guest-age" name="guest-age" type="text" class="guest-age">
+                    <br>
+                    <label for="guest-gender">Sexo:</label>
+                    <select id="guest-gender" class="guest-gender" name="guest-gender">
+                        <option>Hombre</option>
+                        <option>Mujer</option>
+                    </select>
+                    <br>
+                    <label for="guest-interests">Intereses: </label>
+                    <textarea id="guest-interests" name="guest-interests" type="text" class="guest-age"></textarea>
+                    <br>
+                    <div id="submit" class="button">Registrarse</div>
+                </form>
+            </section>
+            <section id="bio-display">
+            </section>
+        </section>
+
+        <script type="text/javascript" src="JS/person.js"></script>
+        <script type="text/javascript" src="JS/app.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready( function () {
+                main();
+            });
+        </script>
+    </body>
+</html>

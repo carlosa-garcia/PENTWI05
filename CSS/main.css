@@ -1,0 +1,68 @@
+html, body {
+    margin: 0;
+    width: 100%;
+}
+
+.menu {
+    background-color: black;
+    color: white;
+    padding: 3px;
+}
+
+.menu ul {
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    list-style: none;
+    padding: 2px;
+    display: inline;
+}
+
+section {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.bio-form {
+    width: 60%;
+    margin: auto;
+}
+.button {
+    width: 6em;
+    background-color: gray;
+    padding: 1px 6px;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: buttontext;
+    background-color: buttonface;
+    box-sizing: border-box;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+
+    -webkit-writing-mode: horizontal-tb;
+
+    -webkit-appearance: button;
+}
+
+
+.bio-section p {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
