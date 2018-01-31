@@ -19,13 +19,13 @@
             <section class="bio-form">
                 <form id="guest-form" method="POST" action="#">
                     <label for="guest-first-name">Nombre: </label>
-                    <input id="guest-first-name" name="guest-first-name" type="text" class="guest-name">
+                    <input id="guest-first-name" name="guest-first-name" type="text" class="guest-name" required>
                     <br>
                     <label for="guest-last-name">Apellido: </label>
-                    <input id="guest-last-name" name="guest-last-name" type="text" class="guest-name">
+                    <input id="guest-last-name" name="guest-last-name" type="text" class="guest-name" required>
                     <br>
                     <label for="guest-age">Edad: </label>
-                    <input id="guest-age" name="guest-age" type="text" class="guest-age">
+                    <input id="guest-age" name="guest-age" type="text" class="guest-age" required>
                     <br>
                     <label for="guest-gender">Sexo:</label>
                     <select id="guest-gender" class="guest-gender" name="guest-gender">
@@ -34,7 +34,7 @@
                     </select>
                     <br>
                     <label for="guest-interests">Intereses: </label>
-                    <textarea id="guest-interests" name="guest-interests" type="text" class="guest-age"></textarea>
+                    <textarea id="guest-interests" name="guest-interests" type="text" class="guest-age" required></textarea>
                     <br>
                     <div id="submit" class="button">Registrarse</div>
                 </form>
