@@ -1,11 +1,28 @@
-function CreatePerson (nombre, apellido, edad, sexo, intereses) {
+function validateInput(regexPattern, value) {
+    isValid = true;
+    regexPattern = new RegExp(regexPattern)
+    if (!regexPattern.test(value)) {
+        isValid = false;
+    }
+    return isValid;
+}
+
+function CreatePerson(nombre, apellido, edad, sexo, intereses) {
+    var strRegexPattern = '^[aA-zZ ]+$';
+    var numRegexPattern = '^[0-9]+$';
+    if (!validateInput(strRegexPattern, nombre) || !validateInput(strRegexPattern, apellido)) {
+        throw 'Nombre y apellido solo pueden contener letras';
+    }
+    if (!validateInput(numRegexPattern, parseInt(edad)) || edad.length > 2) {
+        throw 'Edad solo puede ser valor numerico y no puede ser mayor a 99';
+    }
     var intereses = intereses.split("\n")
     var persona = new Person(nombre, apellido, edad, sexo, intereses);
     return persona;
 }
 
 
-function CreateBio (persona) {
+function CreateBio(persona) {
 
     var html = `
     <article class="bio-section">
@@ -25,7 +42,7 @@ function CreateBio (persona) {
     $('span#intereses').last().html(intereses);
 }
 
-function main () {
+function main() {
     $('#submit').click( function () {
         var nombre = $('#guest-first-name').val();
         var apellido = $('#guest-last-name').val();
@@ -33,9 +50,14 @@ function main () {
         var sexo = $('#guest-gender').val()
         var intereses = $('#guest-interests').val();
         if (nombre && apellido && edad && intereses) {
-            var persona = CreatePerson(nombre, apellido, edad, sexo, intereses);
-            CreateBio(persona);
-            $('#guest-form')[0].reset();
+            try {
+                var persona = CreatePerson(nombre, apellido, edad, sexo, intereses);
+                CreateBio(persona);
+            } catch (err) {
+                alert(err);
+            } finally {
+                $('#guest-form')[0].reset();
+            }
         } else {
             alert("Favor de llenar los campos!");
         }
